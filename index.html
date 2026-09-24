@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Modelos matemáticos de trayectorias y asíntotas." />
+    <title>Modelos Asíntotas</title>
+  </head>
+  <body>
+    <main>
+      <section id="intro" class="intro" aria-labelledby="intro-title">
+        <p class="eyebrow">Modelos Asíntotas · Core v1.0</p>
+        <h1 id="intro-title">Una carta construida con trayectorias.</h1>
+        <p>Dos modelos matemáticos independientes para observar aproximación, historia y distancia.</p>
+      </section>
+
+      <section id="asymptote" class="model-section" aria-labelledby="asymptote-title">
+        <div class="section-copy"><p class="eyebrow">Modelo B</p><h2 id="asymptote-title">Asíntotas</h2><p>Dos trayectorias oscilan y se aproximan a una trayectoria compartida.</p></div>
+        <div class="graph" data-graph="asymptote"></div>
+        <button class="replay" data-replay="asymptote" type="button">↻ Volver a ver</button>
+        <details><summary>Ver el modelo matemático</summary><p><code>L<sub>B</sub>(t)=mt+b</code>; cada trayectoria añade una oscilación amortiguada.</p></details>
+      </section>
+
+      <section class="transition" aria-label="Transición"><p>La misma infraestructura puede observar otra escala temporal.</p></section>
+
+      <section id="history" class="model-section" aria-labelledby="history-title">
+        <div class="section-copy"><p class="eyebrow">Modelo A</p><h2 id="history-title">Historia</h2><p>Una trayectoria central acompaña una separación que cambia de régimen.</p></div>
+        <div class="graph" data-graph="history"></div>
+        <button class="replay" data-replay="history" type="button">↻ Volver a ver</button>
+        <details><summary>Ver el modelo matemático</summary><p><code>d<sub>A</sub>(t)=B(t)+A(t)sin(θ(t))</code>, con perturbaciones deterministas y memoria residual.</p></details>
+      </section>
+
+      <section id="closing" class="closing"><p class="eyebrow">Cierre</p><p>Los modelos describen estructuras matemáticas; la interpretación queda abierta.</p></section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
