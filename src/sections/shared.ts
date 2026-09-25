@@ -14,6 +14,6 @@ export function observeAutoplay(element: HTMLElement, controller: AnimationContr
   if (!config.autoplay) return;
   if (!("IntersectionObserver" in window)) { controller.play(); return; }
   let activated = false;
-  const observer = new IntersectionObserver(entries => { if (!activated && entries.some(e => e.isIntersecting)) { activated = true; controller.play(); observer.disconnect(); } }, { threshold });
+  const observer = new IntersectionObserver(entries => { if (!activated && entries.some(e => e.isIntersecting && e.intersectionRatio >= threshold)) { activated = true; controller.play(); observer.disconnect(); } }, { threshold });
   observer.observe(element);
 }
