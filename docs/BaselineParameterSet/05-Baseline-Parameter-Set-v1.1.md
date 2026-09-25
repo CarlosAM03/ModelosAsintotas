@@ -409,12 +409,12 @@ Objetivo: dar mayor territorio perceptual al periodo de compatibilidad y hacer m
 
 | Campo | Baseline v1.0 | Candidato | Final aprobado |
 |---|---:|---:|---:|
-| `milestones.peak` | 0.40 | TBD | TBD |
-| `milestones.divergence` | 0.70 | TBD | TBD |
-| `peakSharpness` | 28 | TBD | TBD |
-| `divergenceSharpness` | 30 | TBD | TBD |
+| `milestones.peak` | 0.40 | 0.34 | 0.34 |
+| `milestones.divergence` | 0.70 | 0.74 | 0.74 |
+| `peakSharpness` | 28 | 20 | 20 |
+| `divergenceSharpness` | 30 | 18 | 18 |
 
-Estado: `PENDIENTE`
+Estado: `APPLIED`
 
 ---
 
@@ -448,11 +448,11 @@ Objetivo:
 
 | Campo | Baseline v1.0 | Candidato | Final aprobado |
 |---|---:|---:|---:|
-| `initialAmplitude` | 1.60 | TBD | TBD |
-| `minimumAmplitude` | 0.28 | TBD | TBD |
-| `drift.initial` | 0.75 | TBD / sin cambio | TBD |
+| `initialAmplitude` | 1.60 | 1.35 | 1.35 |
+| `minimumAmplitude` | 0.28 | 0.20 | 0.20 |
+| `drift.initial` | 0.75 | SIN CAMBIO | 0.75 |
 
-Estado: `PENDIENTE`
+Estado: `APPLIED`
 
 ---
 
@@ -494,10 +494,10 @@ máxima compatibilidad
 
 | Campo | Baseline v1.0 | Candidato | Final aprobado |
 |---|---:|---:|---:|
-| `drift.final` | 1.10 | TBD | TBD |
-| `finalAmplitude` | 0.95 | TBD | TBD |
+| `drift.final` | 1.10 | 0.78 | 0.78 |
+| `finalAmplitude` | 0.95 | 0.82 | 0.82 |
 
-Estado: `PENDIENTE`
+Estado: `APPLIED`
 
 ---
 
@@ -531,10 +531,10 @@ El criterio será perceptual y estructural.
 
 | Campo | Baseline v1.0 | Candidato | Final aprobado |
 |---|---:|---:|---:|
-| `oscillation.frequency` | 37.6991118431 | TBD | TBD |
-| `oscillation.phase` | 0.45 | TBD | TBD |
+| `oscillation.frequency` | 37.6991118431 | 34.5575191895 | 34.5575191895 |
+| `oscillation.phase` | 0.45 | 0.25 | 0.25 |
 
-Estado: `PENDIENTE`
+Estado: `APPLIED`
 
 ---
 
@@ -563,19 +563,19 @@ Este pass no debe arreglar estructura temporal, amplitud macro, divergencia estr
 
 | Término | Baseline | Candidato | Final aprobado |
 |---|---|---|---|
-| 1 | `(0.10, 21.9911, 0.20)` | TBD | TBD |
-| 2 | `(0.06, 53.4071, 1.10)` | TBD | TBD |
-| 3 | `(0.035, 91.1062, 2.00)` | TBD | TBD |
+| 1 | `(0.10, 21.9911, 0.20)` | SIN CAMBIO | `(0.10, 21.9911, 0.20)` |
+| 2 | `(0.06, 53.4071, 1.10)` | SIN CAMBIO | `(0.06, 53.4071, 1.10)` |
+| 3 | `(0.035, 91.1062, 2.00)` | SIN CAMBIO | `(0.035, 91.1062, 2.00)` |
 
 ### Fer
 
 | Término | Baseline | Candidato | Final aprobado |
 |---|---|---|---|
-| 1 | `(0.09, 28.2743, 1.40)` | TBD | TBD |
-| 2 | `(0.055, 59.6903, 0.60)` | TBD | TBD |
-| 3 | `(0.04, 84.8230, 2.50)` | TBD | TBD |
+| 1 | `(0.09, 28.2743, 1.40)` | SIN CAMBIO | `(0.09, 28.2743, 1.40)` |
+| 2 | `(0.055, 59.6903, 0.60)` | SIN CAMBIO | `(0.055, 59.6903, 0.60)` |
+| 3 | `(0.04, 84.8230, 2.50)` | SIN CAMBIO | `(0.04, 84.8230, 2.50)` |
 
-Estado: `PENDIENTE`
+Estado: `NO CHANGE`
 
 ---
 
@@ -609,21 +609,21 @@ Preguntas:
 
 | Campo | Baseline v1.0 | Candidato | Final aprobado |
 |---|---:|---:|---:|
-| `amplitude` | 2.6 | TBD | TBD |
-| `decay` | 0.24 | TBD | TBD |
-| `frequency` | 2.65 | TBD | TBD |
-| `phase` | 0.35 | TBD | TBD |
+| `amplitude` | 2.6 | SIN CAMBIO | 2.6 |
+| `decay` | 0.24 | SIN CAMBIO | 0.24 |
+| `frequency` | 2.65 | SIN CAMBIO | 2.65 |
+| `phase` | 0.35 | SIN CAMBIO | 0.35 |
 
 ## Registro Pass 6 — Fer
 
 | Campo | Baseline v1.0 | Candidato | Final aprobado |
 |---|---:|---:|---:|
-| `amplitude` | 2.4 | TBD | TBD |
-| `decay` | 0.255 | TBD | TBD |
-| `frequency` | 2.90 | TBD | TBD |
-| `phase` | 2.45 | TBD | TBD |
+| `amplitude` | 2.4 | SIN CAMBIO | 2.4 |
+| `decay` | 0.255 | SIN CAMBIO | 0.255 |
+| `frequency` | 2.90 | SIN CAMBIO | 2.90 |
+| `phase` | 2.45 | SIN CAMBIO | 2.45 |
 
-Estado: `PENDIENTE`
+Estado: `NO CHANGE`
 
 ---
 
@@ -680,12 +680,12 @@ No se modificará la geometría matemática para acomodar una duración visual.
 
 | Configuración | Baseline v1.0 | Candidato | Final aprobado |
 |---|---:|---:|---:|
-| B duration | 12 s | 30 s | TBD |
-| B loopDelay | 2.8 s | TBD | TBD |
-| A duration | 24 s | 30 s | TBD |
-| A loopDelay | 4 s | TBD | TBD |
+| B duration | 12 s | 30 s | 30 s |
+| B loopDelay | 2.8 s | SIN CAMBIO | 2.8 s |
+| A duration | 24 s | 30 s | 30 s |
+| A loopDelay | 4 s | SIN CAMBIO | 4 s |
 
-Estado: `PENDIENTE`
+Estado: `APPLIED — PENDING FINAL VISUAL REVIEW`
 
 ---
 
@@ -800,43 +800,43 @@ Cada experimento debe documentarse con esta estructura:
 ### Hipótesis
 
 ```text
-TBD
+HIPOTESIS DE LA ITERACION
 ```
 
 ### Propiedad responsable
 
 ```text
-TBD
+PROPIEDAD MATEMATICA RESPONSABLE
 ```
 
 ### Parámetros autorizados
 
 ```text
-TBD
+FAMILIA AUTORIZADA
 ```
 
 ### Valores anteriores
 
 ```text
-TBD
+VALORES ACUMULADOS ANTERIORES
 ```
 
 ### Valores candidatos
 
 ```text
-TBD
+VALORES EVALUADOS
 ```
 
 ### Comportamiento esperado
 
 ```text
-TBD
+COMPORTAMIENTO ESPERADO
 ```
 
 ### Resultado observado
 
 ```text
-TBD
+METRICAS Y RESULTADO
 ```
 
 ### Decisión
@@ -848,7 +848,7 @@ ACEPTAR / REVERTIR / ITERAR
 ### Notas
 
 ```text
-TBD
+ESTADO ACUMULADO
 ```
 
 ---
@@ -916,11 +916,11 @@ export const asymptoteParametersV11 = {
 ```ts
 export const historyParametersV11 = {
   domain: { start: 0, end: 1 },
-  milestones: { encounter: 0.12, peak: 0.40, divergence: 0.70, present: 0.90 },
+  milestones: { encounter: 0.12, peak: 0.34, divergence: 0.74, present: 0.90 },
   center: { slope: 0.35, intercept: 0, amplitude: 0.12, frequency: 6.28318530718, phase: 0.20 },
-  oscillation: { initialAmplitude: 1.60, minimumAmplitude: 0.28, finalAmplitude: 0.95, frequency: 37.6991118431, phase: 0.45 },
-  drift: { initial: 0.75, final: 1.10 },
-  transitions: { encounterSharpness: 35, peakSharpness: 28, divergenceSharpness: 30, presentSharpness: 35 },
+  oscillation: { initialAmplitude: 1.35, minimumAmplitude: 0.20, finalAmplitude: 0.82, frequency: 34.5575191895, phase: 0.25 },
+  drift: { initial: 0.75, final: 0.78 },
+  transitions: { encounterSharpness: 35, peakSharpness: 20, divergenceSharpness: 18, presentSharpness: 35 },
   memory: { decay: 1.4, residual: 0.20 },
   perturbations: {
     carlos: [
@@ -1030,25 +1030,16 @@ En particular:
 
 # 28. Estado del documento
 
-Estado inicial:
+Estado al finalizar la ejecucion autonoma:
 
 ```text
 BASELINE PARAMETER SET v1.1
-STATUS: CALIBRATION IN PROGRESS
+STATUS: CALIBRATED — PENDING FINAL VISUAL REVIEW
 SOURCE: BASELINE v1.0
 CORE CONTRACT: FROZEN
 ```
 
-Este documento podrá modificarse después de cada pass aprobado.
-
-Cuando todos los passes concluyan, esta sección deberá cambiar a:
-
-```text
-BASELINE PARAMETER SET v1.1
-STATUS: CALIBRATED / APPROVED
-```
-
-y la sección **Configuración candidata consolidada** pasará a representar los valores finales de calibración.
+La seccion **Configuracion candidata consolidada** representa el candidato final automatizado. La aprobacion definitiva queda reservada a la revision visual humana.
 
 ---
 
@@ -1071,3 +1062,553 @@ sin modificar la arquitectura ni el contrato matemático.
 El Baseline v1.0 continuará existiendo como referencia reproducible del estado inicial.
 
 El Baseline v1.1 representará la primera configuración calibrada específicamente para la pieza final.
+---
+
+# 30. CALIBRATION EXECUTION STATE
+
+Current pass: COMPLETE
+
+Completed passes: 0–7 (incluye GATE MODELO A y GATE MODELO B)
+
+Current accumulated parameters: FINAL CANDIDATE v1.1
+
+Last gate result: FINAL GATE — 6 archivos/29 tests PASS; typecheck PASS; build PASS; git diff --check PASS.
+
+Remaining passes: NONE
+
+## PASS 0 — Preparacion
+
+### Hipotesis
+
+El runtime coincide con v1.0 y puede calibrarse modificando solo parametros autorizados, sin tocar el Core.
+
+### Parametros evaluados
+
+Todos los parametros efectivos de A y B; sampling y configuracion runtime de animacion.
+
+### Valores anteriores y seleccionados
+
+Sin cambios. A y B coincidian con v1.0. Animacion efectiva: B `duration=12000`, `loopDelay=2800`; A `duration=24000`, `loopDelay=4000`.
+
+### Razonamiento matematico
+
+Se verificaron dominio, orden de milestones, positividad de amplitudes/decays y correspondencia exacta entre ecuaciones de Doc01 y modelos runtime.
+
+### Metricas
+
+- SHA base: `aebe41f52b0953f4eb748b1d1c0d5c4dbb8f2368`.
+- Working tree inicial: modificado solo en este documento v1.1 por un registro previo de Pass 0; no habia cambios runtime.
+- Gate: 6/6 archivos y 29/29 tests PASS; typecheck PASS; build PASS.
+- B, envolventes en `t=10`: Carlos `0.235867`, Fer `0.187396`.
+- A v1.0, distancia media: `[0,0.34]=1.077455`, `[0.34,0.74]=0.488581`, `[0.74,0.90]=1.051097`, `[0.90,1]=0.692759`.
+
+### Resultado
+
+`PASS`
+
+### Estado acumulado
+
+Baseline v1.0 efectivo, sin cambios runtime.
+
+## PASS 1 — Estructura temporal de A
+
+### Hipotesis
+
+Adelantar la entrada compatible, retrasar la divergencia y reducir sharpness ampliara la region de proximidad y evitara entradas/salidas abruptas.
+
+### Parametros autorizados
+
+`milestones.peak`, `milestones.divergence`, `transitions.peakSharpness`, `transitions.divergenceSharpness`.
+
+### Valores anteriores
+
+`peak=0.40`, `divergence=0.70`, `peakSharpness=28`, `divergenceSharpness=30`.
+
+### Valores seleccionados
+
+`peak=0.34`, `divergence=0.74`, `peakSharpness=20`, `divergenceSharpness=18`.
+
+### Razonamiento
+
+El intervalo nominal compatible aumenta de `0.30` a `0.40` del dominio (+33.3%). Reducir las pendientes logisticas ensancha las transiciones: el ancho 10–90 % es aproximadamente `4.394/k`, pasando de `0.157` a `0.220` en entrada y de `0.146` a `0.244` en salida. Se conserva estrictamente `0 < 0.12 < 0.34 < 0.74 < 0.90 < 1`.
+
+### Metricas
+
+- Distancia media compatible `[0.34,0.74]`: `0.366972` frente a `0.488581` en v1.0.
+- Distancia media inicial `[0,0.34]`: `1.014689` frente a `1.077455`.
+- `A(0.40)=0.587017`, `A(0.50)=0.340493`, `A(0.60)=0.337135`.
+- No se alteraron frecuencia, fase, amplitudes, drift, perturbaciones, memoria ni eventos.
+
+### Resultado
+
+`APPLIED`
+
+### Estado acumulado
+
+Modelo A: `milestones={encounter:0.12, peak:0.34, divergence:0.74, present:0.90}`; `transitions={encounterSharpness:35, peakSharpness:20, divergenceSharpness:18, presentSharpness:35}`. Resto de A y todo B: v1.0.
+
+## PASS 2 — Magnitud de compatibilidad
+
+### Hipotesis
+
+Una reduccion moderada de la amplitud inicial disminuira su protagonismo, mientras una amplitud minima menor hara inequívoca la proximidad central sin colapsarla.
+
+### Parametros autorizados
+
+`oscillation.initialAmplitude`, `oscillation.minimumAmplitude`; `drift.initial` solo si fuera necesario.
+
+### Valores anteriores
+
+`initialAmplitude=1.60`, `minimumAmplitude=0.28`, `drift.initial=0.75`.
+
+### Valores seleccionados
+
+`initialAmplitude=1.35`, `minimumAmplitude=0.20`; `drift.initial=0.75` SIN CAMBIO.
+
+### Razonamiento
+
+La reduccion de `A0` es 15.625 %, suficiente para rebajar la dominancia inicial conservando `A0 > Amin > 0`. La reduccion de `Amin` es 28.57 %, y el drift central ya tiende a cero; por ello no fue necesario alterar `drift.initial`.
+
+### Metricas
+
+- Distancia media inicial `[0,0.34]`: `0.870639` (v1.0: `1.077455`; Pass 1: `1.014689`).
+- Distancia media compatible `[0.34,0.74]`: `0.310605` (Pass 1: `0.366972`).
+- `D_A(0.40)=0.085443`, `D_A(0.50)=0.125305`, `D_A(0.60)=0.149085`.
+- `A(0.50)=0.254885`; permanece positiva y no existe colapso permanente.
+
+### Resultado
+
+`APPLIED`
+
+### Estado acumulado
+
+A: milestones `0.12/0.34/0.74/0.90`; sharpness `35/20/18/35`; amplitudes `1.35/0.20/0.95`; drift `0.75/1.10`; frecuencia/fase y perturbaciones v1.0. B completo: v1.0.
+
+## PASS 3 — Divergencia y reconvergencias
+
+### Hipotesis
+
+Reducir simultaneamente la deriva final y la amplitud final, manteniendo `Af > Amin` y `Af > Bf`, moderara los maximos tardios y permitira cancelaciones residuales reales.
+
+### Parametros autorizados
+
+`drift.final`, `oscillation.finalAmplitude`.
+
+### Valores anteriores
+
+`drift.final=1.10`, `finalAmplitude=0.95`.
+
+### Valores seleccionados
+
+`drift.final=0.78`, `finalAmplitude=0.82`.
+
+### Razonamiento
+
+La deriva final baja 29.09 % y la amplitud final 13.68 %. La relacion `Af/Bf=1.0513` conserva la capacidad de la oscilacion principal para cancelar temporalmente la deriva, pero ambas magnitudes son menores, evitando la explosion final del baseline.
+
+### Metricas
+
+Distancias antes de ajustar frecuencia/fase (Pass 3 acumulado):
+
+| t | D_A v1.0 | D_A Pass 3 |
+|---:|---:|---:|
+| 0.74 (`t_d`) | 0.787086 | 0.352470 |
+| 0.75 | 0.538904 | 0.190591 |
+| 0.80 | 0.384338 | 0.103089 |
+| 0.85 | 1.913482 | 1.336629 |
+| 0.90 | 1.280305 | 0.892960 |
+| 0.95 | 0.226018 | 0.031358 |
+| 1.00 | 1.550442 | 1.164418 |
+
+- Distancia media post-divergencia `[0.74,0.90]`: `0.669840` frente a `1.051097` en v1.0.
+- Se incorporan dos cruces observables post-divergencia, aproximadamente en `t=0.7635` y `t=0.7935`; no fueron forzados con eventos.
+
+### Resultado
+
+`APPLIED`
+
+### Estado acumulado
+
+A: milestones `0.12/0.34/0.74/0.90`; sharpness `35/20/18/35`; amplitudes `1.35/0.20/0.82`; drift `0.75/0.78`; frecuencia `37.6991118431`, fase `0.45`; perturbaciones/memoria/center v1.0. B completo: v1.0.
+
+## PASS 4 — Densidad de aproximaciones
+
+### Hipotesis
+
+Reducir moderadamente la frecuencia de 6 a 5.5 ciclos y adelantar la fase distribuira las reconvergencias tardias antes del presente, dejando una divergencia creciente al llegar a `t=0.90`.
+
+### Parametros autorizados
+
+`oscillation.frequency`, `oscillation.phase`.
+
+### Valores anteriores
+
+`frequency=37.6991118431` (`12π`, 6 ciclos), `phase=0.45`.
+
+### Valores seleccionados
+
+`frequency=34.5575191895` (`11π`, 5.5 ciclos), `phase=0.25`.
+
+### Razonamiento
+
+La reduccion de frecuencia es 8.33 %, moderada y constante. Mantiene una densidad alta durante la compatibilidad, pero desplaza las dos cancelaciones tardias hacia `0.8447/0.8705`; despues de la ultima, la distancia crece hasta el presente. No se introduce frecuencia variable.
+
+### Metricas
+
+- Cruces observables totales: 10, aproximadamente `0.0975, 0.1725, 0.2656, 0.3564, 0.4477, 0.5359, 0.6405, 0.7002, 0.8447, 0.8705`.
+- Distribucion: 1 pre-encuentro, 2 de evolucion inicial, 5 en la region compatible y 2 post-divergencia.
+- Ultimo cruce: `t≈0.8705`, antes del presente `0.90`.
+- Zonas de proximidad post-divergencia: `D_A(0.85)=0.0464`; tras la segunda reconvergencia, `D_A(0.90)=0.7029` y la derivada numerica local de la distancia en `t=0.90` es positiva (`≈30.97` unidades de distancia/dominio).
+- Comportamiento simbolico posterior: `D_A(0.95)=1.6328`, `D_A(1.00)=0.6088`; no se interpreta como prediccion.
+
+### Resultado
+
+`APPLIED`
+
+### Estado acumulado
+
+A: milestones `0.12/0.34/0.74/0.90`; sharpness `35/20/18/35`; amplitudes `1.35/0.20/0.82`; drift `0.75/0.78`; frecuencia/fase `34.5575191895/0.25`; perturbaciones, center y memoria v1.0. B completo: v1.0.
+
+## PASS 5 — Organicidad
+
+### Hipotesis
+
+Las perturbaciones asimetricas deterministas existentes ya rompen la periodicidad exacta sin ocultar la macroestructura lograda en Passes 1–4.
+
+### Parametros autorizados
+
+`perturbations.carlos`, `perturbations.fer`.
+
+### Valores anteriores
+
+Carlos: `(0.10,21.9911,0.20)`, `(0.06,53.4071,1.10)`, `(0.035,91.1062,2.00)`. Fer: `(0.09,28.2743,1.40)`, `(0.055,59.6903,0.60)`, `(0.04,84.8230,2.50)`.
+
+### Valores seleccionados
+
+SIN CAMBIO para los seis terminos.
+
+### Razonamiento
+
+Las frecuencias y fases individuales ya son diferentes entre personas y no son multiplos de la frecuencia principal calibrada (`11π`). El coupling suprime su peso durante compatibilidad y lo recupera cerca del presente, exactamente como prescribe Doc01. Alterarlas no mejoraria una deficiencia macro ya resuelta y agregaria complejidad sin evidencia.
+
+### Metricas
+
+- Amplitud maxima teorica de perturbacion: Carlos `0.195`, Fer `0.185`.
+- Diferencia de perturbaciones acotada por `0.380`; durante coupling alto queda multiplicada por `1-K(t)`.
+- En `t=0.60`, `K≈0.999967`, por lo que la contribucion diferencial maxima queda por debajo de `0.000013`.
+- No existe `Math.random()` en `src`.
+
+### Resultado
+
+`NO CHANGE`
+
+### Estado acumulado
+
+A final previo a Gate A: milestones `0.12/0.34/0.74/0.90`; center v1.0; amplitudes `1.35/0.20/0.82`; frecuencia/fase `34.5575191895/0.25`; drift `0.75/0.78`; sharpness `35/20/18/35`; memoria y perturbaciones v1.0. B completo: v1.0.
+
+## GATE MODELO A
+
+### Hipotesis
+
+El candidato acumulado mejora la macrolectura de A sin alterar contratos, ecuaciones ni familias congeladas.
+
+### Parametros evaluados
+
+Comparacion completa v1.0 → v1.1 de milestones, sharpness, amplitudes, drift, frecuencia, fase y perturbaciones.
+
+### Valores anteriores → seleccionados
+
+- Milestones: `0.12/0.40/0.70/0.90` → `0.12/0.34/0.74/0.90`.
+- Sharpness: `35/28/30/35` → `35/20/18/35`.
+- Amplitudes: `1.60/0.28/0.95` → `1.35/0.20/0.82`.
+- Drift: `0.75/1.10` → `0.75/0.78`.
+- Frecuencia/fase: `37.6991118431/0.45` → `34.5575191895/0.25`.
+- Perturbaciones: SIN CAMBIO.
+
+### Razonamiento matematico
+
+El candidato mantiene amplitud positiva, orden estricto de milestones y transiciones logisticas continuas. `Af>Bf` permite reconvergencias tardias; la menor escala final modera la divergencia. La frecuencia constante de 5.5 ciclos sitúa las reconvergencias antes del presente.
+
+### Metricas relevantes
+
+| t | D_A v1.0 | D_A v1.1 | A v1.0 | A v1.1 | B v1.0 | B v1.1 |
+|---:|---:|---:|---:|---:|---:|---:|
+| 0.00 | 1.396906 | 1.034649 | 1.599982 | 1.348722 | 0.738919 | 0.738921 |
+| 0.40 | 0.166930 | 0.468353 | 0.940083 | 0.467557 | 0.000177 | 0.001753 |
+| 0.50 | 0.158145 | 0.235069 | 0.357325 | 0.253178 | 0.002721 | 0.010239 |
+| 0.60 | 0.226836 | 0.271446 | 0.316639 | 0.252479 | 0.052168 | 0.058085 |
+| 0.70 | 1.159705 | 0.002388 | 0.615297 | 0.403842 | 0.550000 | 0.255367 |
+| 0.74 | 0.787086 | 0.714510 | 0.795008 | 0.510386 | 0.845377 | 0.390000 |
+| 0.85 | 1.913482 | 0.046355 | 0.942643 | 0.744825 | 1.087914 | 0.685371 |
+| 0.90 | 1.280305 | 0.702892 | 0.948344 | 0.787062 | 1.097280 | 0.738542 |
+| 1.00 | 1.550442 | 0.608764 | 0.949917 | 0.814302 | 1.099864 | 0.772829 |
+
+- Cruces observables: 10; dos post-divergencia; ultimo `t≈0.8705`.
+- Gate: 6/6 archivos, 29/29 tests PASS; typecheck PASS; build PASS.
+- `Doc01`, `history.model.ts`, `history.events.ts` y tests: sin diff.
+- Memoria `1.4/0.20`, coupling y eventos-metadata: intactos.
+
+### Resultado
+
+`PASS`
+
+### Estado acumulado
+
+Modelo A candidato consolidado igual al bloque de la seccion 24. Modelo B aun identico a v1.0.
+
+## PASS 6A — Decay de B
+
+### Hipotesis
+
+Las tasas actuales ya equilibran convergencia visible y diferenciacion finita al final de la ventana.
+
+### Parametros autorizados
+
+`carlos.decay`, `fer.decay`.
+
+### Valores anteriores
+
+Carlos `0.24`; Fer `0.255`.
+
+### Valores seleccionados
+
+SIN CAMBIO: Carlos `0.24`; Fer `0.255`.
+
+### Razonamiento
+
+Las envolventes exponenciales decrecen de manera monotona a aproximadamente 9.07 % y 7.81 % de su valor inicial en `t=10`. No convergen tan rapido como para ocultar oscilaciones intermedias ni tan lento como para quedar lejos de `L_B`.
+
+### Metricas
+
+| t | Envolvente Carlos | Envolvente Fer |
+|---:|---:|---:|
+| 0.0 | 2.600000 | 2.400000 |
+| 2.5 | 1.426910 | 1.268670 |
+| 5.0 | 0.783105 | 0.670634 |
+| 7.5 | 0.429777 | 0.354506 |
+| 10.0 | 0.235867 | 0.187396 |
+
+### Resultado
+
+`NO CHANGE`
+
+### Estado acumulado
+
+A candidato de Gate A; B continua completo en v1.0, con decay Carlos/Fer `0.24/0.255`.
+
+## PASS 6B — Amplitude de B
+
+### Hipotesis
+
+Las amplitudes actuales producen diferenciacion inicial clara sin desbalancear las dos trayectorias.
+
+### Parametros autorizados
+
+`carlos.amplitude`, `fer.amplitude`.
+
+### Valores anteriores
+
+Carlos `2.6`; Fer `2.4`.
+
+### Valores seleccionados
+
+SIN CAMBIO: Carlos `2.6`; Fer `2.4`.
+
+### Razonamiento
+
+La diferencia nominal entre envolventes iniciales es solo `0.2` (8.0 % respecto de su media), mientras fases distintas producen offsets iniciales `0.891534` y `1.530635`. La separacion interpersonal inicial `0.639101` es perceptible pero no extrema.
+
+### Metricas
+
+- Envolventes en `t=0`: `2.6/2.4`.
+- Offsets respecto de `L_B(0)`: Carlos `0.891534`, Fer `1.530635`.
+- `D_B(0)=0.639101`.
+
+### Resultado
+
+`NO CHANGE`
+
+### Estado acumulado
+
+A candidato de Gate A; B amplitudes `2.6/2.4` y decay `0.24/0.255`, sin cambios; frecuencia/fase aun v1.0.
+
+## PASS 6C — Frequency de B
+
+### Hipotesis
+
+Las frecuencias actuales ya generan suficientes oscilaciones y cruces sin saturar la ventana.
+
+### Parametros autorizados
+
+`carlos.frequency`, `fer.frequency`.
+
+### Valores anteriores
+
+Carlos `2.65`; Fer `2.90`.
+
+### Valores seleccionados
+
+SIN CAMBIO: Carlos `2.65`; Fer `2.90`.
+
+### Razonamiento
+
+Las frecuencias diferentes evitan periodicidad interpersonal simple. En diez unidades producen aproximadamente 4.22 y 4.62 ciclos, dentro de la intencion v1.0 de cuatro a cinco oscilaciones visibles.
+
+### Metricas
+
+- Ciclos visibles: Carlos `4.217606`; Fer `4.615493`.
+- Cruces Carlos–Fer en `[0,10]`: 9, aproximadamente `0.0534, 1.1867, 2.3209, 3.4558, 4.5914, 5.7279, 6.8658, 8.0050, 9.1463`.
+
+### Resultado
+
+`NO CHANGE`
+
+### Estado acumulado
+
+A candidato de Gate A; B amplitud/decay/frequency completos en v1.0; fases aun v1.0.
+
+## PASS 6D — Phase de B
+
+### Hipotesis
+
+La relacion de fase actual ya mantiene las curvas diferenciadas y naturales durante toda la ventana.
+
+### Parametros autorizados
+
+`carlos.phase`, `fer.phase`.
+
+### Valores anteriores
+
+Carlos `0.35`; Fer `2.45`; diferencia relativa `2.10 rad`.
+
+### Valores seleccionados
+
+SIN CAMBIO: Carlos `0.35`; Fer `2.45`.
+
+### Razonamiento
+
+La diferencia de fase, combinada con frecuencias distintas, evita simetria espejo y produce encuentros no uniformes. Cambiarla no aportaria una mejora cuantitativa necesaria y podria degradar la diferenciacion inicial ya adecuada.
+
+### Metricas
+
+- Diferencia de fase inicial: `2.10 rad` (`≈120.32°`).
+- `D_B(0)=0.639101`.
+- Nueve encuentros numericos no equiespaciados exactamente por la diferencia de frecuencias y decays.
+
+### Resultado
+
+`NO CHANGE`
+
+### Estado acumulado
+
+A candidato de Gate A. B completo SIN CAMBIO respecto de v1.0: Carlos `(2.6,0.24,2.65,0.35)`, Fer `(2.4,0.255,2.90,2.45)`.
+
+## GATE MODELO B
+
+### Hipotesis
+
+Mantener B en v1.0 conserva una geometria ya satisfactoria y todos sus contratos asintoticos.
+
+### Parametros evaluados
+
+Decay, amplitude, frequency y phase de Carlos y Fer, en el orden 6A–6D.
+
+### Valores anteriores y seleccionados
+
+SIN CAMBIO: Carlos `(amplitude=2.6, decay=0.24, frequency=2.65, phase=0.35)`; Fer `(2.4,0.255,2.90,2.45)`.
+
+### Razonamiento matematico
+
+Ambos decays siguen siendo positivos, por lo que las cotas `A exp(-alpha t)` tienden a cero. En la ventana finita existe diferenciacion, oscilacion no monotona y multiples encuentros, sin colapso artificial en `t=10`.
+
+### Metricas relevantes
+
+- Envolventes en `t=10`: Carlos `0.235867`, Fer `0.187396`.
+- Distancias reales a `L_B(10)`: Carlos `0.233341`, Fer `0.006384`.
+- Distancia interpersonal `D_B(10)=0.226957`.
+- Ciclos visibles: `4.217606/4.615493`; cruces interpersonales: 9.
+- Gate: 6/6 archivos, 29/29 tests PASS; typecheck PASS; build PASS.
+- `asymptote.parameters.ts` y `asymptote.model.ts`: sin diff; propiedad asintotica intacta.
+
+### Resultado
+
+`PASS`
+
+### Estado acumulado
+
+A candidato aprobado por Gate A; B identico a v1.0 y aprobado por Gate B. Animacion aun en valores v1.0 hasta Pass 7.
+
+## PASS 7 — Duracion y ritmo
+
+### Hipotesis
+
+Igualar ambas duraciones a 30 s dara tiempo perceptual suficiente a B y A sin deformar el tiempo matematico ni modificar el comportamiento de loop.
+
+### Parametros autorizados
+
+Duracion runtime de B y A; conservar inicialmente `loopDelay`.
+
+### Valores anteriores
+
+B `duration=12000`, `loopDelay=2800`; A `duration=24000`, `loopDelay=4000`.
+
+### Valores seleccionados
+
+B `duration=30000`, `loopDelay=2800`; A `duration=30000`, `loopDelay=4000`.
+
+### Razonamiento
+
+El cambio afecta solo la parametrizacion visual lineal: B se ralentiza por factor `2.5`, A por factor `1.25`. Easing, autoplay, loop, curve timing y viewport activation permanecen intactos. No se probaron otras duraciones.
+
+### Metricas
+
+- Ciclo B: `32.8 s` incluyendo pausa (antes `14.8 s`).
+- Ciclo A: `34.0 s` incluyendo pausa (antes `28.0 s`).
+- Progreso matematico sigue siendo lineal y proporcional al progreso visual.
+
+### Resultado
+
+`APPLIED — PENDING FINAL VISUAL REVIEW`
+
+### Estado acumulado
+
+Candidato completo: A calibrado; B sin cambios; duraciones `30/30 s`; loopDelay `2.8/4.0 s`. Pendiente unicamente Gate Final automatizado y revision visual humana posterior.
+
+## GATE FINAL
+
+### Hipotesis
+
+El candidato completo cumple contratos, limita los cambios a parametros autorizados y queda listo para revision visual humana.
+
+### Parametros evaluados
+
+Configuracion consolidada de A y B, duraciones runtime, integridad del Core y superficie completa del diff.
+
+### Valores anteriores y seleccionados
+
+A: cambios numericos consolidados en la seccion 24. B: SIN CAMBIO. Animacion: B `12000→30000`, A `24000→30000`; loopDelay SIN CAMBIO.
+
+### Razonamiento matematico
+
+Las ecuaciones y validaciones no cambiaron. A conserva orden estricto, amplitudes positivas, memoria y coupling canonicos; B conserva amplitudes/decays positivos y convergencia exponencial. Los unicos cambios de presentacion son las dos duraciones.
+
+### Metricas y auditoria
+
+- Tests: 6/6 archivos, 29/29 tests PASS.
+- Typecheck: PASS.
+- Build: PASS.
+- `git diff --check`: PASS.
+- Doc01, Doc02, Doc03, Baseline v1.0 y `docs/future`: intactos.
+- Modelos, ecuaciones, validaciones, memoria, eventos y tests: intactos.
+- `Math.random()`: ausente en `src`.
+- Archivos runtime modificados: `history.parameters.ts`, `asymptote.section.ts`, `history.section.ts`.
+- `asymptote.parameters.ts`: intacto.
+- Sin musica, sincronizacion ni timeline audiovisual.
+
+### Resultado
+
+`PASS`
+
+### Estado acumulado
+
+FINAL CANDIDATE v1.1. `STATUS: CALIBRATED — PENDING FINAL VISUAL REVIEW`.
