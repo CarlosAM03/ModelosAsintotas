@@ -457,41 +457,54 @@ De esta manera, durante alta interacción las perturbaciones individuales pierde
 
 # 12. Memoria
 
-Aquí conviene distinguir **acoplamiento** de **memoria**.
+Aquí conviene distinguir **acoplamiento** de **memoria**. La memoria se genera exclusivamente por la interacción; \(H_\infty\) no representa memoria preexistente, sino la huella residual de una interacción que ocurrió.
 
-Definimos:
+Definimos primero la interacción acumulada:
+
+$$
+\boxed{
+Q(t)=\int_{t_e}^{\min(t,t_n)}K(s)\,ds
+}
+$$
+
+y el acumulado total de interacción:
+
+$$
+\boxed{
+Q_n=Q(t_n)=\int_{t_e}^{t_n}K(s)\,ds
+}
+$$
+
+con \(Q_n>0\). La memoria canónica queda definida por tramos:
 
 $$
 \boxed{
 H(t)=
-\int_{t_e}^{\min(t,t_n)}
-K(s)e^{-\lambda(t-s)}\,ds
+\begin{cases}
+0, & t<t_e\\[8pt]
+H_\infty\dfrac{Q(t)}{Q_n}
++\displaystyle\int_{t_e}^{t}K(s)e^{-\lambda(t-s)}\,ds,
+& t_e\le t\le t_n\\[14pt]
+H_\infty+
+\displaystyle\int_{t_e}^{t_n}K(s)e^{-\lambda(t-s)}\,ds,
+& t>t_n
+\end{cases}
 }
 $$
 
-donde \(\lambda\ge0\) controla cuánto decae la memoria.
-
-Si queremos expresar que nunca desaparece completamente:
+con las restricciones estrictas:
 
 $$
-\boxed{
-H^*(t)=H_{\infty}+H(t)
-}
+H_\infty>0,\qquad \lambda>0,\qquad Q_n>0.
 $$
 
-con:
+Por definición \(H(t_e)=0\). Durante la interacción, el componente residual se construye progresivamente desde cero hasta \(H_\infty\), mientras el componente transitorio acumula la interacción con decaimiento exponencial. Después de \(t_n\) no se incorpora nueva interacción: sólo decae el componente transitorio y permanece el residual.
+
+Por tanto:
 
 $$
-H_{\infty}>0.
+\lim_{t\to\infty}H(t)=H_\infty.
 $$
-
-Así:
-
-$$
-\lim_{t\to\infty}H^*(t)=H_\infty
-$$
-
-en lugar de cero.
 
 La consecuencia conceptual es:
 
@@ -596,13 +609,19 @@ con memoria:
 $$
 \boxed{
 H(t)=
+\begin{cases}
+0, & t<t_e\\[6pt]
+H_\infty\dfrac{Q(t)}{Q_n}
++\displaystyle\int_{t_e}^{t}K(s)e^{-\lambda(t-s)}ds,
+& t_e\le t\le t_n\\[10pt]
 H_\infty+
-\int_{t_e}^{\min(t,t_n)}
-K(s)e^{-\lambda(t-s)}ds
+\displaystyle\int_{t_e}^{t_n}K(s)e^{-\lambda(t-s)}ds,
+& t>t_n
+\end{cases}
 }
 $$
 
-**Nota de nomenclatura para implementación:** en esta sección compacta, `H(t)` es la memoria canónica que deberá exponer el Modelo A en Core v1.0 y corresponde a la variante con memoria residual descrita anteriormente como $H^*(t)$. Esta nota únicamente unifica el nombre utilizado por la implementación; no introduce una ecuación nueva.
+Aquí \(Q(t)\) y \(Q_n\) son los acumulados definidos en la sección de Memoria. Esta es la definición canónica que deberá exponer el Modelo A en Core v1.0.
 
 Éste es el **modelo histórico-paramétrico A**.
 
