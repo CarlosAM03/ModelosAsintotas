@@ -872,11 +872,7 @@ Cuando $K(t)\approx1$, las perturbaciones individuales pierden peso relativo con
 
 # 25. Memoria histórica
 
-La memoria se implementará exactamente conforme al modelo completo del Documento 01:
-
-$$
-H(t)=H_\infty+\int_{t_e}^{\min(t,t_n)}K(s)e^{-\lambda(t-s)}ds.
-$$
+La memoria se implementará exactamente conforme a la definición por tramos del Documento 01. Antes de \(t_e\), \(H(t)=0\); durante la interacción se construyen el componente residual y el componente transitorio a partir de \(K(t)\); después de \(t_n\) no se acumula nueva interacción y el componente transitorio decae hasta que \(H(t)\) converge a \(H_\infty\). La memoria no modifica actualmente las trayectorias del Modelo A.
 
 Baseline:
 
@@ -897,7 +893,9 @@ memory: {
 }
 ```
 
-Este documento no añade gates, funciones de activación ni términos adicionales a $H(t)$.
+`memory.residual` corresponde a \(H_\infty\) y `memory.decay` corresponde a \(\lambda\). Por tanto, \(H_\infty>0\) y \(\lambda>0\). \(H_\infty\) representa la huella residual posterior a una interacción efectiva, no memoria preexistente. La memoria es cero antes del encuentro por definición del modelo, no por un parámetro especial del baseline.
+
+Este documento no añade gates, funciones de activación ni términos adicionales a (H(t)).
 
 La implementación podrá calcular la integral numéricamente si no existe una expresión cerrada conveniente.
 

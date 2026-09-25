@@ -321,6 +321,8 @@ Implement:
 
 Animation must operate on already-generated geometry.
 
+Viewport activation must respect each graph's `AnimationConfig.autoplay`: only a graph configured with `autoplay: true` may start automatically when its threshold is reached. With `autoplay: false`, the graph remains idle until an explicit `play()` or `restart()` action.
+
 Do not place mathematical equations inside the animation loop.
 
 Checkpoint:
@@ -640,10 +642,10 @@ Core v1.0 is complete only when:
 - the generic graph pipeline works;
 - B renders and animates;
 - A renders and animates;
-- autoplay works;
+- autoplay works according to the per-graph `autoplay` contract;
 - replay works;
 - automatic loop works;
-- viewport activation works;
+- viewport activation works without bypassing `autoplay`;
 - reduced-motion behavior works;
 - responsive layout works;
 - production build succeeds;

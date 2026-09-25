@@ -560,6 +560,10 @@ $$
 memory(t)\leftrightarrow H(t).
 $$
 
+El contrato de `memory(t)` implementa la definición autoritativa de memoria del Documento 01. La memoria es cero antes de \(t_e\) y también en \(t_e\); asimismo, \(Q(t)=0\) antes de \(t_e\) y el acumulado \(Q(t)\) representa únicamente interacción acumulada desde el encuentro. Durante la interacción se construyen un componente residual y un componente transitorio. Después de \(t_n\) no se incorpora nueva interacción: el componente transitorio decae y \(H(t)\) converge a \(H_\infty\). \(H_\infty\) es la huella residual de una interacción ocurrida, no memoria preexistente.
+
+La memoria es matemáticamente significativa aunque no se visualice en Core v1.0 y no modifica actualmente \(C_A(t)\) ni \(F_A(t)\). Este documento no redefine la ecuación ni expone \(Q(t)\) como API pública adicional.
+
 ---
 
 # 12. Parámetros de A
@@ -1176,6 +1180,8 @@ export interface AnimationConfig {
 }
 ```
 
+`autoplay` pertenece a cada instancia/controller de animación. No controla las ecuaciones, el sampling, el dominio matemático, la duración relativa del modelo ni las trayectorias; únicamente controla si el mecanismo de activación por viewport puede iniciar automáticamente ese controller.
+
 Ejemplo:
 
 ```ts
@@ -1193,9 +1199,12 @@ Los valores definitivos serán de diseño, no arquitectura.
 
 # 30. Autoplay
 
-B y A podrán reproducirse automáticamente.
+El valor de `autoplay` es operativo por gráfica:
 
-Sin embargo, para evitar que A se reproduzca antes de que Fer llegue a ella, el autoplay deberá poder activarse **cuando la sección entre en viewport**.
+* `autoplay: true`: cuando la gráfica alcanza el threshold configurado del viewport, su controller puede iniciar automáticamente la animación;
+* `autoplay: false`: alcanzar o cruzar el threshold no inicia la animación; la gráfica permanece sin reproducirse hasta una acción explícita que ordene `play()` o `restart()`.
+
+Cada gráfica mantiene su estado de forma independiente. Activar o reproducir B no activa A, y activar o reproducir A no activa B.
 
 Esto puede implementarse mediante:
 
@@ -1206,14 +1215,13 @@ IntersectionObserver
 Por tanto:
 
 ```text
-B entra en viewport
+gráfica entra en viewport
        ↓
-play B
-
-A entra en viewport
-       ↓
-play A
+si `autoplay === true` → `controller.play()`
+si `autoplay === false` → no iniciar
 ```
+
+`IntersectionObserver` no debe ignorar el valor de `autoplay`. El viewport sólo proporciona la señal de activación; no modifica el tiempo matemático ni ningún parámetro del modelo.
 
 Esto sigue siendo completamente estático desde el punto de vista arquitectónico.
 
@@ -1310,7 +1318,7 @@ La funcionalidad sí pertenece a V1.
 
 La política será:
 
-* primera visualización → autoplay;
+* primera visualización → autoplay únicamente si la configuración de esa gráfica tiene `autoplay: true`;
 * finalización → pausa corta;
 * después → loop automático si está habilitado;
 * usuario puede reiniciar manualmente en cualquier momento.
@@ -1438,6 +1446,8 @@ Cuando alcance un threshold configurable:
 
 ```text
 section visible
+      ↓
+if animation.autoplay === true
       ↓
 animation.play()
 ```
@@ -2129,7 +2139,7 @@ El núcleo estará terminado cuando:
 * Cada gráfica pueda reiniciarse manualmente.
 * El motor soporte reinicio automático al terminar.
 * El loop tenga pausa configurable.
-* Las gráficas comiencen al entrar en viewport.
+* Las gráficas con `autoplay: true` comiencen al entrar en viewport; las demás esperen una acción explícita.
 * `prefers-reduced-motion` sea respetado.
 * Los modelos no dependan del sistema de animación.
 * Los modelos no dependan del DOM.
