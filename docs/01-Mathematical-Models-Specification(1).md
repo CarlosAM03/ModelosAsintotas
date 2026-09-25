@@ -463,7 +463,12 @@ Definimos primero la interacción acumulada:
 
 $$
 \boxed{
-Q(t)=\int_{t_e}^{\min(t,t_n)}K(s)\,ds
+Q(t)=
+\begin{cases}
+0, & t<t_e\\[6pt]
+\displaystyle\int_{t_e}^{\min(t,t_n)}K(s)\,ds,
+& t\ge t_e
+\end{cases}
 }
 $$
 
@@ -474,6 +479,8 @@ $$
 Q_n=Q(t_n)=\int_{t_e}^{t_n}K(s)\,ds
 }
 $$
+
+En particular, \(Q(t)=0\) para \(t<t_e\), \(Q(t_e)=0\), \(Q(t)>0\) para \(t_e<t\le t_n\) cuando \(K(t)>0\), y \(Q(t)=Q_n\) para \(t\ge t_n\).
 
 con \(Q_n>0\). La memoria canónica queda definida por tramos:
 

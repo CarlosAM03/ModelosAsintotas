@@ -16,6 +16,13 @@ describe("Modelo A", () => {
     expect(model.memory(tn + 100)).toBeCloseTo(residual, 8);
     expect(model.memory(0.6)).toBe(model.memory(0.6));
   });
+  it("es continua alrededor del encuentro dentro de la tolerancia numérica", () => {
+    const te = historyParameters.milestones.encounter;
+    const epsilon = 0.00001;
+    expect(model.memory(te - epsilon)).toBe(0);
+    expect(model.memory(te)).toBeCloseTo(0, 12);
+    expect(model.memory(te + epsilon)).toBeCloseTo(model.memory(te), 4);
+  });
   it("rechaza memoria residual o decaimiento no estrictamente positivos", () => {
     expect(() => createHistoryModel({ ...historyParameters, memory: { ...historyParameters.memory, residual: 0 } })).toThrow();
     expect(() => createHistoryModel({ ...historyParameters, memory: { ...historyParameters.memory, decay: 0 } })).toThrow();
