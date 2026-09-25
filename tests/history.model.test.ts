@@ -81,8 +81,11 @@ describe("Modelo A", () => {
 
   it("valida la envolvente de amplitud exigida por el modelo", () => {
     expectRejected((p) => { p.oscillation.minimumAmplitude = 0; });
+    expectRejected((p) => { p.oscillation.minimumAmplitude = -0.1; });
     expectRejected((p) => { p.oscillation.initialAmplitude = p.oscillation.minimumAmplitude; });
+    expectRejected((p) => { p.oscillation.initialAmplitude = p.oscillation.minimumAmplitude - 0.1; });
     expectRejected((p) => { p.oscillation.finalAmplitude = p.oscillation.minimumAmplitude; });
+    expectRejected((p) => { p.oscillation.finalAmplitude = p.oscillation.minimumAmplitude - 0.1; });
   });
 
   it("implementa las tres regiones de memoria y su convergencia al residual", () => {
@@ -117,6 +120,14 @@ describe("Modelo A", () => {
 
   it("rechaza invariantes de memoria no válidos", () => {
     expectRejected((p) => { p.memory.residual = 0; });
+    expectRejected((p) => { p.memory.residual = -1; });
     expectRejected((p) => { p.memory.decay = 0; });
+    expectRejected((p) => { p.memory.decay = -1; });
+  });
+
+  it("rechaza parámetros no finitos", () => {
+    expectRejected((p) => { p.center.slope = Number.NaN; });
+    expectRejected((p) => { p.oscillation.phase = Number.POSITIVE_INFINITY; });
+    expectRejected((p) => { p.perturbations.carlos[0].frequency = Number.NEGATIVE_INFINITY; });
   });
 });
