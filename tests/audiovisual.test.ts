@@ -12,9 +12,9 @@ describe("audiovisual presentation", () => {
     const aStart = t.intro + t.scrollB + t.settle + 30_000 + t.graphHoldB + t.disclosureOpen + t.readB + t.transitionTravel + t.transitionHold + t.scrollA + t.settleA;
     const end = aStart + 30_000 + t.graphHoldA + t.disclosureOpen + t.readA + t.scrollClosing + t.closing + t.returnHome;
     expect(aStart).toBe(audiovisualConfig.landmarks.modelAStartTarget);
-    expect(audiovisualConfig.landmarks.musicalKnotReference - aStart).toBe(5_000);
+    expect(audiovisualConfig.landmarks.musicalKnotReference - aStart).toBe(3_500);
     expect(end).toBeLessThan(audiovisualConfig.landmarks.journeyMaximum);
-    expect(Math.abs(end - audiovisualConfig.landmarks.journeyTarget)).toBeLessThanOrEqual(1_000);
+    expect(end).toBe(audiovisualConfig.landmarks.journeyTarget);
     expect(audiovisualConfig.audio.src).toBe("/audio/background.mp3");
   });
 

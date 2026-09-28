@@ -4,7 +4,7 @@ Carta digital interactiva construida a partir de modelos matemáticos para repre
 
 El proyecto utiliza funciones matemáticas, muestreo y visualización SVG animada como medio principal de expresión. La interfaz web funciona únicamente como soporte para presentar los modelos y su narrativa.
 
-> Estado: Core v1.0 en desarrollo.
+> Estado: Core matemático y Baseline Parameter Set v1.1 estables; Presentation & Experience v1.0 y Ambient Audiovisual Experience v1.1.0 implementados. La validación audiovisual humana sigue pendiente.
 
 ## Proyecto
 
@@ -22,7 +22,7 @@ El proyecto sigue el flujo:
 
 Matemática → Sampling → Geometría → SVG → Animación → Composición
 
-La matemática es independiente de la representación visual y del sistema de animación.
+La matemática es independiente de la representación visual y del sistema de animación. `ExperienceController` orquesta el recorrido; `AudioController` gestiona únicamente la música ambiental.
 
 ## Stack
 
@@ -42,16 +42,19 @@ El proyecto es completamente estático:
 - sin APIs requeridas;
 - sin contenido remoto necesario.
 
+El build de Vite se ejecuta con `npm run build` y produce `dist/`.
+
 ## Especificaciones
 
 La implementación está gobernada por los siguientes documentos:
 
-1. `01-Mathematical-Models-Specification.md` — autoridad matemática del proyecto.
-2. `02-Software-Implementation-Specification.md` — arquitectura y contrato técnico, subordinado al modelo matemático.
-3. `03-Development-Execution-Plan.md` — secuencia de implementación.
-4. `04-Baseline-Parameter-Set.md` — valores iniciales de calibración.
+1. `docs/01-Mathematical-Models-Specification(1).md` — autoridad matemática.
+2. `docs/02-Software-Implementation-Specification(1).md` — arquitectura y contratos técnicos.
+3. `docs/BaselineParameterSet/05-Baseline-Parameter-Set-v1.1.md` — parámetros numéricos aprobados.
+4. `docs/06-Presentation-Experience-Specification-v1.0.md` — presentación y experiencia.
+5. `docs/07-v1.1-First Audiovisual Implementation Baseline.md` — implementación audiovisual.
 
-Los documentos 03 y 04 están completamente subordinados a las decisiones establecidas en 01 y 02.
+`docs/03-Development-Execution-Plan(1).md` conserva el plan de ejecución como contexto.
 
 ## Principio del proyecto
 

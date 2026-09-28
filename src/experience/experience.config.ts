@@ -7,7 +7,7 @@ export const experienceTiming = {
   disclosureOpen: 400,
   readB: 6600,
   transitionTravel: 1800,
-  transitionHold: 700,
+  transitionHold: 2200,
   scrollA: 1500,
   settleA: 1000,
   readA: 14600,
