@@ -12,11 +12,10 @@ function normalizeClassNames(classNames: SvgClassNames): string[] {
   return names.filter(Boolean);
 }
 
-export function createPath(d: string, classNames: SvgClassNames, label: string): SVGPathElement {
+export function createPath(d: string, classNames: SvgClassNames): SVGPathElement {
   const path = document.createElementNS(SVG_NS, "path");
   path.setAttribute("d", d);
   path.classList.add(...normalizeClassNames(classNames));
   path.setAttribute("role", "presentation");
-  path.setAttribute("aria-label", label);
   return path;
 }

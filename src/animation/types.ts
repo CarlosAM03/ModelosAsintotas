@@ -1,4 +1,14 @@
-export type AnimationState = "idle" | "playing" | "completed";
+export type AnimationState = "idle" | "playing" | "paused" | "completed";
 export interface CurveTiming { start: number; end: number; }
-export interface AnimationConfig { duration: number; autoplay: boolean; loop: boolean; loopDelay: number; easing?: "linear" | "easeInOut"; reducedMotion?: boolean; }
-export interface AnimationController { play(): void; restart(): void; stop(): void; getProgress(): number; getState(): AnimationState; }
+export interface AnimationConfig { duration: number; }
+export interface AnimationController {
+  play(): void;
+  pause(): void;
+  reset(): void;
+  replay(): void;
+  showComplete(): void;
+  getProgress(): number;
+  getState(): AnimationState;
+  onChange(listener: () => void): () => void;
+  onComplete(listener: () => void): () => void;
+}

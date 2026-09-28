@@ -1,6 +1,31 @@
 import { createAnimationController } from "../src/animation/animator";
+
 describe("AnimationController", () => {
-  it("allows explicit play and restart when autoplay is false", () => { let callbacks: FrameRequestCallback[] = []; let value = -1; const controller = createAnimationController({ config: { duration: 100, loop: false, loopDelay: 0, autoplay: false }, update: p => { value = p; }, raf: cb => { callbacks.push(cb); return callbacks.length; }, caf: () => undefined, now: () => 0 }); expect(controller.getState()).toBe("idle"); expect(value).toBe(0); controller.play(); expect(controller.getState()).toBe("playing"); callbacks.shift()?.(50); expect(value).toBe(.5); callbacks.shift()?.(100); expect(controller.getProgress()).toBe(1); expect(controller.getState()).toBe("completed"); controller.restart(); expect(value).toBe(0); });
-  it("supports reduced motion without looping", () => { let value = 0; const controller = createAnimationController({ config: { duration: 100, loop: true, loopDelay: 10, autoplay: true }, reducedMotion: true, update: p => { value = p; }, raf: () => 1 }); controller.play(); expect(value).toBe(1); expect(controller.getState()).toBe("completed"); });
-  it("maps curve timing and can loop after a delay", async () => { let callbacks: FrameRequestCallback[] = []; let value = 0; const controller = createAnimationController({ config: { duration: 100, loop: true, loopDelay: 0, autoplay: false }, update: p => { value = p; }, raf: cb => { callbacks.push(cb); return callbacks.length; }, caf: () => undefined, now: () => 0 }); controller.play(); callbacks.shift()?.(100); expect(controller.getState()).toBe("completed"); await new Promise(resolve => setTimeout(resolve, 0)); expect(controller.getState()).toBe("playing"); expect(value).toBe(0); controller.stop(); });
+  it("pauses exactly, resumes from progress, replays from zero and never loops", () => {
+    let time = 0;
+    let nextId = 0;
+    const callbacks = new Map<number, FrameRequestCallback>();
+    const values: number[] = [];
+    const controller = createAnimationController({
+      config: { duration: 100 }, update: value => values.push(value),
+      raf: callback => { const id = ++nextId; callbacks.set(id, callback); return id; },
+      caf: id => { callbacks.delete(id); }, now: () => time
+    });
+    const frame = (at: number) => { time = at; const [id, callback] = callbacks.entries().next().value!; callbacks.delete(id); callback(at); };
+    expect(controller.getState()).toBe("idle");
+    controller.play(); frame(40); controller.pause();
+    expect(controller.getState()).toBe("paused");
+    expect(controller.getProgress()).toBeCloseTo(0.4);
+    time = 70; controller.play(); frame(100);
+    expect(controller.getProgress()).toBeCloseTo(0.7);
+    frame(130);
+    expect(controller.getState()).toBe("completed");
+    expect(callbacks.size).toBe(0);
+    controller.replay();
+    expect(controller.getProgress()).toBe(0);
+    expect(controller.getState()).toBe("playing");
+    controller.reset();
+    expect(controller.getState()).toBe("idle");
+    expect(values.at(-1)).toBe(0);
+  });
 });
