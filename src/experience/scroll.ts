@@ -1,4 +1,5 @@
 import { cancellableDelay } from "./cancellable-delay";
+import { experienceTiming } from "./experience.config";
 
 let lastControlledY = 0;
 export function controlledScrollY(): number { return lastControlledY; }
@@ -48,10 +49,11 @@ export async function readDisclosure(
   const last = Math.max(first, window.scrollY + content.getBoundingClientRect().bottom - window.innerHeight + 80);
   const step = Math.max(180, window.innerHeight * 0.65);
   const count = Math.max(1, Math.ceil((last - first) / step) + 1);
-  const perStep = Math.max(1800, minimumMs / count);
+  const perStep = Math.max(experienceTiming.readStepMinimum, minimumMs / count);
   for (let i = 0; i < count; i++) {
     const position = i === count - 1 ? last : Math.min(last, first + i * step);
-    await scroll(position, Math.min(900, perStep * 0.35), signal);
-    await wait(perStep - Math.min(900, perStep * 0.35), signal);
+    const travel = Math.min(experienceTiming.readStepTravelMaximum, perStep * 0.35);
+    await scroll(position, travel, signal);
+    await wait(perStep - travel, signal);
   }
 }

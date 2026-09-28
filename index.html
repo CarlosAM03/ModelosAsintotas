@@ -7,13 +7,15 @@
     <title>Somos Asintotas</title>
   </head>
   <body>
-    <button class="autoplay-control" data-autoplay type="button" aria-pressed="false">Autoplay · OFF</button>
+    <audio data-soundtrack hidden></audio>
+    <button class="autoplay-control" data-autoplay type="button" aria-pressed="false" hidden>Autoplay · OFF</button>
     <p class="visually-hidden" data-status role="status" aria-live="polite"></p>
     <main>
       <section id="intro" class="intro" aria-labelledby="intro-title">
         <p class="eyebrow">"Nosotros Somos Asintotas"</p>
-        <h1 id="intro-title">Una carta construida con trayectorias.</h1>
+        <h1 id="intro-title" tabindex="-1">Una carta construida con trayectorias.</h1>
         <p class="lead">Dos modelos, dos metaforas... una historia</p>
+        <button class="open-letter" data-open-letter type="button">Abrir carta</button>
       </section>
 
       <section id="asymptote" class="model-section" aria-labelledby="asymptote-title">
@@ -37,7 +39,7 @@
         </details>
       </section>
 
-      <section class="transition" aria-label="Transición entre modelos"><p>La asíntota representa un límite al que la curva se acerca pero nunca alcanza. Pero podriamos ser mas precisos.</p></section>
+      <section class="transition" aria-label="Transición entre modelos"><p>La asíntota representa un límite al que la curva se acerca pero nunca alcanza... Podriamos ser mas precisos.</p></section>
 
       <section id="history" class="model-section" aria-labelledby="history-title">
         <div class="section-copy"><p class="eyebrow">Modelo A</p><h2 id="history-title">Historia</h2><p>Aquí las trayectoras tienen etapas, cruces y memoria.</p></div>

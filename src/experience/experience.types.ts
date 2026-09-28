@@ -1,4 +1,5 @@
 import type { AnimationController } from "../animation/types";
+import type { AudioPlayback } from "../audio/audio.types";
 
 export type ExperienceState =
   | "IDLE" | "INTRO" | "SCROLLING_TO_B" | "PLAYING_B"
@@ -18,6 +19,7 @@ export interface ExperienceView {
 export interface ExperienceDependencies {
   b: AnimationController;
   a: AnimationController;
+  audio?: AudioPlayback;
   view: ExperienceView;
   wait: (ms: number, signal: AbortSignal) => Promise<void>;
   scroll: (target: Element | number, duration: number, signal: AbortSignal) => Promise<void>;

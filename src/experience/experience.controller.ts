@@ -27,6 +27,7 @@ export class ExperienceController {
 
   disable(): void {
     this.abortRun();
+    this.deps.audio?.pause();
     this.enabled = false;
     this.setState(this.reduced ? "MANUAL_REDUCED" : "MANUAL");
   }
@@ -51,10 +52,13 @@ export class ExperienceController {
     this.deps.view.bDisclosure.open = false;
     this.deps.view.aDisclosure.open = false;
     this.deps.home();
+    this.deps.audio?.reset();
     this.enabled = true;
     const id = ++this.runId;
     const aborter = new AbortController();
     this.aborter = aborter;
+    // Native play() is requested synchronously in the user-gesture call chain.
+    void this.deps.audio?.startFromBeginning().catch(() => undefined);
     void this.run(id, aborter.signal);
   }
 
@@ -81,7 +85,7 @@ export class ExperienceController {
       await wait(timing.settle, signal);
       this.setState("PLAYING_B");
       await this.waitForGraph(this.deps.b, signal);
-      await wait(timing.graphHold, signal);
+      await wait(timing.graphHoldB, signal);
       this.setState("READING_B_MATH");
       view.bDisclosure.open = true;
       await wait(timing.disclosureOpen, signal);
@@ -91,10 +95,10 @@ export class ExperienceController {
       await wait(timing.transitionHold, signal);
       this.setState("SCROLLING_TO_A");
       await scroll(view.aGraph, timing.scrollA, signal);
-      await wait(timing.settle, signal);
+      await wait(timing.settleA, signal);
       this.setState("PLAYING_A");
       await this.waitForGraph(this.deps.a, signal);
-      await wait(timing.graphHold, signal);
+      await wait(timing.graphHoldA, signal);
       this.setState("READING_A_MATH");
       view.aDisclosure.open = true;
       await wait(timing.disclosureOpen, signal);
@@ -106,6 +110,7 @@ export class ExperienceController {
       await scroll(0, timing.returnHome, signal);
       if (id !== this.runId || signal.aborted) return;
       this.aborter = undefined;
+      this.deps.audio?.reset();
       this.setState("COMPLETE");
     } catch {
       if (id !== this.runId || signal.aborted) return;

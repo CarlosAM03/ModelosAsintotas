@@ -7,6 +7,9 @@ import { cinematicScroll, readDisclosure, returnHome } from "./experience/scroll
 import { bindControls } from "./presentation/controls";
 import { bindManualIntent } from "./presentation/intent";
 import { renderEquations } from "./presentation/equations";
+import { bindEntry } from "./presentation/entry";
+import { AudioController } from "./audio/audio.controller";
+import { audiovisualConfig } from "./audio/audio.config";
 
 if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 returnHome();
@@ -21,8 +24,14 @@ const requireElement = <T extends Element>(selector: string): T => {
 };
 const media = window.matchMedia("(prefers-reduced-motion: reduce)");
 const status = requireElement<HTMLElement>("[data-status]");
+const audioElement = requireElement<HTMLAudioElement>("[data-soundtrack]");
+audioElement.src = audiovisualConfig.audio.src;
+audioElement.preload = "auto";
+const soundtrack = new AudioController(audioElement, () => {
+  status.textContent = "La experiencia continúa sin audio.";
+});
 const experience = new ExperienceController({
-  b, a,
+  b, a, audio: soundtrack,
   view: {
     bGraph: requireElement('[data-graph="asymptote"]'),
     aGraph: requireElement('[data-graph="history"]'),
@@ -50,6 +59,7 @@ const experience = new ExperienceController({
 });
 bindControls(experience, { asymptote: b, history: a }, () => media.matches);
 bindManualIntent(experience);
+bindEntry(experience, () => media.matches);
 const motionChanged = () => {
   experience.setReducedMotion(media.matches);
   document.querySelector<HTMLButtonElement>("[data-autoplay]")!.disabled = media.matches;
@@ -57,5 +67,4 @@ const motionChanged = () => {
 };
 media.addEventListener?.("change", motionChanged);
 if (media.matches) motionChanged();
-else experience.enable();
-window.addEventListener("load", () => { if (experience.getState() === "INTRO") returnHome(); }, { once: true });
+window.addEventListener("load", () => { if (!experience.isRunning()) returnHome(); }, { once: true });
